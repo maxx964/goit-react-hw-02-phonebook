@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 
+import ContactForm from './ContactForm/ContactForm'
+import ContactList from './ContactList/ContactList';
+
+import { nanoid } from 'nanoid';
+
 class App extends Component {
   state = {
     contacts: [],
     name: '',
   };
-
-  handleChange = (e) => {
+handleChange = (e) => {
     const { name, value } = e.target;
     this.setState({ [name]: value });
   };
@@ -17,21 +21,23 @@ class App extends Component {
       alert('This name is already in the list');
       return;
     }
+      const id = nanoid();
        const newContact = {
-      id: Date.now(),
+      id: id,
       name: this.state.name,
     };
-      this.setState((prevState) => ({
+
+    this.setState((prevState) => ({
       contacts: [...prevState.contacts, newContact],
       name: '',
     }));
   };
 
 
+
     render() {
     return (
-      <div>
-        <h1>Phonebook</h1>
+    <div>
         <ContactForm
           name={this.state.name}
           onChange={this.handleChange}
@@ -43,31 +49,5 @@ class App extends Component {
     );
   }
 }
-
-const ContactForm = ({ name, onChange, onSubmit }) => (
-  <form onSubmit={onSubmit}>
-    <label>
-      Name:
-      <input
-        type="text"
-        name="name"
-        pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-        title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-        required
-        value={name}
-        onChange={onChange}
-      />
-    </label>
-    <button type="submit">Add contact</button>
-  </form>
-);
-
-const ContactList = ({ contacts }) => (
-  <ul>
-    {contacts.map((contact) => (
-      <li key={contact.id}>{contact.name}</li>
-    ))}
-  </ul>
-);
 
 export default App;
