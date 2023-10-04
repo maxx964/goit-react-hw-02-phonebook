@@ -6,36 +6,38 @@ import ContactList from './ContactList/ContactList';
 import Filter from './Filter';
 class App extends Component {
   state = {
-    contacts: [],
-    filter: '',
+  contacts: [],
+  filter: '',
   };
 
-constructor() {
-  super();
-  this.state = {
-    contacts: [
+
+
+  constructor() {
+    super();
+    this.state = {
+      contacts: [
       { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
       { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
       { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
       { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
-    ],
-    filter: '',
-    name: '',
-    number: ''
+      ],
+       filter: '',
+       name: '',
+       number: ''
   };
   };
-
+ 
   handleChange = (e) => {
     const { name, value } = e.target;
     this.setState({ [name]: value });
   };
-// =======================================================
- handleSubmit = (e) => {
-  e.preventDefault();
-  const { name, contacts } = this.state;
-  if (contacts.some((contact) => contact.name === name)) {
-    alert(`"${name}" is already in the list`);
-    return;
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    const { name, contacts } = this.state;
+    if (contacts.some((contact) => contact.name === name)) {
+      alert(`"${name}" is already in the list`);
+      return;
   }
   const id = nanoid();
   const newContact = {
@@ -51,12 +53,10 @@ constructor() {
   }));
 };
 
-// =========================================================
-handleFilterChange = (e) => {
-  const { name, value } = e.target;
-  this.setState({ [name]: value });
+  handleFilterChange = (e) => {
+   const { name, value } = e.target;
+   this.setState({ [name]: value });
 };
-// ==========================================================
 
   handleDeleteContact = (id) => {
     this.setState((prevState) => ({
