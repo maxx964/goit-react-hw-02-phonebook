@@ -1,0 +1,18 @@
+import React from 'react';
+import styles from './Filter.module.css';
+
+const Filter = ({ value, onChange }) => (
+  <div className={styles.filter}>
+    <h3 className={styles.h3}>Find contacts by name</h3>
+    <input
+      className={styles.input}
+      type="text"
+      name="filter"
+      placeholder="Enter first or last name"
+      value={value}
+      onChange={onChange}
+    />
+  </div>
+);
+
+export default Filter;
