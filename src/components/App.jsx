@@ -4,8 +4,6 @@ import { nanoid } from 'nanoid';
 import ContactForm from './ContactForm/ContactForm';
 import ContactList from './ContactList/ContactList';
 import Filter from './Filter';
-
-
 class App extends Component {
   state = {
     contacts: [],
@@ -27,13 +25,11 @@ constructor() {
   };
   };
 
-
-
   handleChange = (e) => {
     const { name, value } = e.target;
     this.setState({ [name]: value });
   };
-
+// =======================================================
  handleSubmit = (e) => {
   e.preventDefault();
   const { name, contacts } = this.state;
@@ -55,12 +51,12 @@ constructor() {
   }));
 };
 
-// ===========================================================
+// =========================================================
 handleFilterChange = (e) => {
   const { name, value } = e.target;
   this.setState({ [name]: value });
 };
-// ================================================================
+// ==========================================================
 
   handleDeleteContact = (id) => {
     this.setState((prevState) => ({
@@ -77,9 +73,8 @@ handleFilterChange = (e) => {
           onChange={this.handleChange}
           onSubmit={this.handleSubmit}
         />
-        <h2 className={styles.h2}>Contacts</h2>
-  <Filter value={this.state.filter} onChange={this.handleFilterChange} />
-
+       
+        <Filter value={this.state.filter} onChange={this.handleFilterChange} />
         <ContactList
           contacts={this.state.contacts}
           onDeleteContact={this.handleDeleteContact}

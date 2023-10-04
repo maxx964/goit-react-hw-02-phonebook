@@ -2,7 +2,8 @@ import React from 'react';
 import styles from './Filter.module.css';
 
 const Filter = ({ value, onChange }) => (
-  <div className={styles.filter}>
+    <div className={styles.filter}>
+    <h2 className={styles.h2}>Contacts</h2>
     <h3 className={styles.h3}>Find contacts by name</h3>
     <input
       className={styles.input}
