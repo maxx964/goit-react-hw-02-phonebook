@@ -34,25 +34,27 @@ constructor() {
     this.setState({ [name]: value });
   };
 
-  handleSubmit = (e) => {
-    e.preventDefault();
-    if (this.state.contacts.some((contact) => contact.name === this.state.name)) {
-      alert('This name is already in the list');
-      return;
-    }
-    const id = nanoid();
-    const newContact = {
-      id: id,
-      name: this.state.name,
-      number: this.state.number,
-    };
-
-    this.setState((prevState) => ({
-      contacts: [...prevState.contacts, newContact],
-      name: '',
-      number: '',
-    }));
+ handleSubmit = (e) => {
+  e.preventDefault();
+  const { name, contacts } = this.state;
+  if (contacts.some((contact) => contact.name === name)) {
+    alert(`"${name}" is already in the list`);
+    return;
+  }
+  const id = nanoid();
+  const newContact = {
+    id: id,
+    name: name,
+    number: this.state.number,
   };
+
+  this.setState((prevState) => ({
+    contacts: [...prevState.contacts, newContact],
+    name: '',
+    number: '',
+  }));
+};
+
 // ===========================================================
 handleFilterChange = (e) => {
   const { name, value } = e.target;
