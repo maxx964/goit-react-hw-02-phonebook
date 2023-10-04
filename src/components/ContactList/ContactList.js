@@ -19,5 +19,8 @@ const ContactList = ({ contacts, onDeleteContact, filter }) => {
   );
 };
 
+
+
+
 export default ContactList;
 
