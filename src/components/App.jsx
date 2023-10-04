@@ -78,14 +78,7 @@ handleFilterChange = (e) => {
           onSubmit={this.handleSubmit}
         />
         <h2 className={styles.h2}>Contacts</h2>
-        <h3 className={styles.h3}>Find contacts by name</h3>
-        <input className={styles.input}
-  type="text"
-  name="filter"
-  placeholder="Enter first or last name"
-  value={this.state.filter}
-  onChange={this.handleFilterChange}
-/>
+  <Filter value={this.state.filter} onChange={this.handleFilterChange} />
 
         <ContactList
           contacts={this.state.contacts}
