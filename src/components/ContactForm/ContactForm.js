@@ -34,7 +34,9 @@ const ContactForm = ({ name, number, onChange, onSubmit }) => (
         Add contact
             </button>   
     </form>
+    
   </div>
+  
 );
 
 export default ContactForm;

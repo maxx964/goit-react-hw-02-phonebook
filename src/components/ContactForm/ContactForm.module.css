@@ -1,6 +1,6 @@
 .wrap {
     width: 500px;
-    padding: 30px;
+    padding: 15px 15px 0px 15px;
     border: 2px solid grey;
 }
 
@@ -38,9 +38,7 @@
 
 }
 
-.input:focus+.icon-user-name {
-    fill: #4D5AE5;
-}
+
 
 .button {
     margin: 5px;

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { nanoid } from 'nanoid';
 
+import { nanoid } from 'nanoid';
 import ContactForm from './ContactForm/ContactForm';
 import ContactList from './ContactList/ContactList';
+import styles from './App.module.css'
 
 class App extends Component {
   state = {
@@ -74,11 +75,12 @@ handleFilterChange = (e) => {
           onChange={this.handleChange}
           onSubmit={this.handleSubmit}
         />
-        <h2>Contacts</h2>
-        <input
+        <h2 className={styles.h2}>Contacts</h2>
+        <h3 className={styles.h3}>Find contacts by name</h3>
+        <input className={styles.input}
   type="text"
   name="filter"
-  placeholder="Find contacts by name"
+  placeholder="Enter first or last name"
   value={this.state.filter}
   onChange={this.handleFilterChange}
 />
