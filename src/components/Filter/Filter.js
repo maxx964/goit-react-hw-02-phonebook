@@ -9,7 +9,7 @@ const Filter = ({ value, onChange }) => (
       className={styles.input}
       type="text"
       name="filter"
-      placeholder="To search enter first or last name"
+      placeholder="Enter first or last name"
       value={value}
       onChange={onChange}
     />
