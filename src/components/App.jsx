@@ -9,9 +9,7 @@ class App extends Component {
   contacts: [],
   filter: '',
   };
-
-
-
+  
   constructor() {
     super();
     this.state = {
