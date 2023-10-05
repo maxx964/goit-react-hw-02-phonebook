@@ -3,11 +3,10 @@ import styles from './ContactForm.module.css';
 
 const ContactForm = ({ name, number, onChange, onSubmit }) => (
     <div className={styles.wrap}>
-        <h1 className={styles.h1}>Phonebook</h1>
-        <form onSubmit={onSubmit}> 
-            
-           <p className={styles.p}>Name</p>
-            <label className={styles.label}>    
+    <h1 className={styles.h1}>Phonebook</h1>
+    <form onSubmit={onSubmit}>
+      <p className={styles.p}>Name</p>
+      <label className={styles.label}>    
         <input className={styles.input}
           type="text"
           name="name"
@@ -23,7 +22,7 @@ const ContactForm = ({ name, number, onChange, onSubmit }) => (
         <input className={styles.input}
           type="tel"
           name="number"
-          pattern="\+?\d{1,4}[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+          pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
           value={number}
