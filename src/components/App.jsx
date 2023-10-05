@@ -39,12 +39,12 @@ class App extends Component {
       alert(`"${name}" is already in the list`);
       return;
   }
-  const id = nanoid();
-  const newContact = {
-    id: id,
-    name: name,
-    number: this.state.number,
-  };
+const newContact = {
+  id: nanoid(),
+  name,
+  number: this.state.number,
+};
+
 
   this.setState((prevState) => ({
     contacts: [...prevState.contacts, newContact],
