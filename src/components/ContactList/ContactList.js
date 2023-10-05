@@ -17,7 +17,7 @@ const ContactList = ({ contacts, onDeleteContact, filter }) => {
       ))}
     </ul>
   );
-};
+};  
 
 export default ContactList;
 
